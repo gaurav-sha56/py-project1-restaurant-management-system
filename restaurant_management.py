@@ -21,8 +21,10 @@ customer = True
 while customer:
     item = input("Your order: ")
     order = item.split(" ")
-    for food in order:
-        bill+=rate[food.lower()]
+    for items in order:
+        freq=int(input(f"Enter how many {items} you want? "))
+        for food in order:
+            bill+=rate[food.lower()]*freq
     choice=input("you want to order more?")
     if choice.lower()=="no":
         customer=False
